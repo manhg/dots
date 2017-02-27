@@ -1,3 +1,8 @@
+# emphaize host name
+export PS1='\[\e[1;34m\]\u@\e[1;37m\]\h \e[1;34m\]\w \$\[\e[0m\] '
+
+[ -f /etc/bash_completion ] && . /etc/bash_completion
+
 alias l='ls --color=auto --classify --group-directories-first --human-readable --quoting-style=literal'
 alias l.='ls -d .* --color=auto' # show hidden only
 alias ll='l -la' # show all
@@ -20,8 +25,6 @@ export MANPAGER="less -X" # Don't clear the screen after quitting a manual page
 export PYTHONIOENCODING=utf-8
 export PYTHONUNBUFFERED=1
 export PYTHONWARNINGS="ignore:Deprecation"
-alias pdb="python3 -m pdb "
-alias pdb2="python2 -m pdb "
 
 export JAVA_OPTS="-Xms32m -Xmx256m"
 export JVM_OPTS=$JAVA_OPTS
@@ -31,8 +34,10 @@ if [ ! -f ~/.z.sh ]; then
 fi
 source ~/.z.sh
 
-case "$OSTYPE" in
-  darwin*)  source ~/.bash_macos ;;
-  linux*)   source ~/.bash_linux ;;
-  *)        echo "unknown: $OSTYPE" ;;
-esac
+if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
+    source /usr/bin/virtualenvwrapper_lazy.sh
+fi
+
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
