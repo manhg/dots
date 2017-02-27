@@ -4,9 +4,8 @@ alias dsclean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
 export NOSE_REDNOSE=1
 alias nosep='nosetests --with-progressive'
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-    source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
 function server() {
