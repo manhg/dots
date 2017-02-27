@@ -1,0 +1,112 @@
+export PS1='\[\e[1;33m\]\u \w \$\[\e[0m\] '
+alias dsclean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
+
+export NOSE_REDNOSE=1
+alias nosep='nosetests --with-progressive'
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+function server() {
+    local port="$1"
+    if [ -z $port ]; then
+        port=$(( ( RANDOM % 100 )  + 8800 ))
+    fi
+    local url="http://127.0.0.1:${port}/"
+    echo "Serving HTML at $url"
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
+        open $url
+    fi
+    python3 -m http.server "$port" >/dev/null 2>&1 &
+}
+
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) \
+    %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --max-count=15"
+export RED="\033[0;31m"
+export CYAN="\033[0;36"
+export LCYAN="\033[1;36"
+export LGREEN="\033[1;32"
+export LBLUE="\033[1;34"
+export NC="\033[0m"
+export GIT_C="printf \"$RED\"; git rev-parse --abbrev-ref HEAD; printf \"$NC\n\"; "
+
+# Git
+alias gmt='git mergetool'
+alias gdf='git diff'
+alias gpr='git pull --rebase'
+alias gprm='git pull --rebase origin master'
+alias grc='git rebase --continue'
+alias gst='git status'
+alias gc='git commit -a'
+alias gexp='git archive --format gzip --output'
+alias git1="git clone --depth=1"
+alias gbs="git clone --depth=1 --single-branch -b " # Usage: gbs {branch} {repo}
+
+function grb() {
+    # Fetch origin and rebase a branch
+    # Syntax: rebase [on_branch_name]
+    local branch="$1"
+    if [ -z $branch ]; then
+        branch='master'
+    fi
+    local current_branch="$(git rev-parse --abbrev-ref HEAD)"
+    git checkout $branch
+    git pull --rebase
+    git checkout "$current_branch"
+    git rebase $branch
+}
+
+alias rebase="grb"
+
+function gca {
+    git add .
+    git commit -C HEAD --amend
+}
+
+function gfp() {
+    local current_branch="$(git rev-parse --abbrev-ref HEAD)"
+    echo "Force push: $current_branch"
+    git push origin +$current_branch
+}
+
+function gcb() {
+    # Current branch
+    printf "\033[0;31m"
+    git rev-parse --abbrev-ref HEAD
+    printf "\033[0m\n"
+    "$@"
+}
+
+crawl() {
+    wget --no-parent --convert-links --page-requisites --html-extension --recursive --no-clobber "$@" \
+        --header="Accept: text/html" \
+        --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0"
+}
+
+function loop() {
+    while :; do
+        "$@"
+        echo 'Hit CTRL+C to stop'
+        echo 'Sleep...'
+        sleep 2
+    done
+}
+
+function pypi() {
+    # Release a new version
+    python3 setup.py register -r pypi
+    python3 setup.py sdist upload -r pypi
+}
+
+
+
+# addition
+pdf_merge() {
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \
+        -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 \
+        -sOutputFile=output.pdf "$@"
+}
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
