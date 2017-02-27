@@ -1,0 +1,24 @@
+# Mac
+*~
+.DS_Store
+.DS_Store?
+
+# Not interesting
+*.log
+*.tgz
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+
+node_modules
+
+# IDE
+*.komodoproject
+.vscode
+.idea
+.fab_tasks~
