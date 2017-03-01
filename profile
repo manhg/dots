@@ -1,5 +1,7 @@
 # emphaize host name
-export PS1='\[\e[1;34m\]\u@\e[1;37m\]\h \e[1;34m\]\w \$\[\e[0m\] '
+PS_COLOR="\[$(tput setaf 3)\]"
+RESET="\[$(tput sgr0)\]"
+export PS1="${PS_COLOR}\u@\h \w \$ ${RESET}"
 
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
