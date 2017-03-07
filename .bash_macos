@@ -1,4 +1,4 @@
-PS_COLOR="\[$(tput setaf 14)\]"
+PS_COLOR="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 export PS1="${PS_COLOR}\u@\h \w \$ ${RESET}"
 
