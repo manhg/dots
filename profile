@@ -34,6 +34,14 @@ export JVM_OPTS=$JAVA_OPTS
 if [ ! -f ~/.z.sh ]; then
     wget -O ~/.z.sh  https://raw.githubusercontent.com/rupa/z/master/z.sh
 fi
+if [ ! -d ~/.bin ]; then
+   mkdir ~/.bin
+   wget  -q -O- https://github.com/zyedidia/micro/releases/download/v1.1.4/micro-1.1.4-linux64.tar.gz | tar -xz -C /tmp
+   mv /tmp/micro-1.1.4/micro ~/.bin/
+   rm -Rf /tmp/micro-1.1.4
+   export PATH="~/.bin:$PATH"
+fi
+
 source ~/.z.sh
 
 if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
