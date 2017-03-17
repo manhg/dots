@@ -5,7 +5,7 @@ alias ll='l -la' # show all
 alias rand='dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64 | cut -c -16'
 ff () { /usr/bin/find . -name "$@" ; }      # ff:  Find file under the current directory
 alias du1='du -h --max-depth=1'
-
+alias u='micro'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 

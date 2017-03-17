@@ -40,6 +40,8 @@ if [ ! -d ~/.bin ]; then
    mv /tmp/micro-1.1.4/micro ~/.bin/
    rm -Rf /tmp/micro-1.1.4
    export PATH="~/.bin:$PATH"
+   alias nano='micro'
+   alias u='micro'
 fi
 
 source ~/.z.sh
