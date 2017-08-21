@@ -36,9 +36,10 @@ if [ ! -f ~/.z.sh ]; then
 fi
 if [ ! -d ~/.bin ]; then
    mkdir ~/.bin
-   wget  -q -O- https://github.com/zyedidia/micro/releases/download/v1.1.4/micro-1.1.4-linux64.tar.gz | tar -xz -C /tmp
-   mv /tmp/micro-1.1.4/micro ~/.bin/
-   rm -Rf /tmp/micro-1.1.4
+   MICRO_VER=1.3.1
+   wget  -q -O- https://github.com/zyedidia/micro/releases/download/v${MICRO_VER}/micro-${MICRO_VER}-linux64.tar.gz | tar -xz -C /tmp
+   mv /tmp/micro-${MICRO_VER}/micro ~/.bin/
+   rm -Rf /tmp/micro-${MICRO_VER}
    export PATH="~/.bin:$PATH"
    alias nano='micro'
    alias u='micro'
