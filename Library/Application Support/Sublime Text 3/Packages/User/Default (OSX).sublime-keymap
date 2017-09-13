@@ -3,4 +3,5 @@
 	{ "keys": ["shift+super+up"], "command": "swap_line_up" },
 	{ "keys": ["shift+super+down"], "command": "swap_line_down" },
 	{ "keys": ["super+l"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["super+k"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
 ]
