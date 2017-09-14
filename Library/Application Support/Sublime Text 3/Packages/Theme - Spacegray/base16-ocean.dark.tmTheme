@@ -325,7 +325,7 @@
 		</dict>
 
 
-		<!-- <dict>
+		<dict>
 			<key>name</key>
 			<string>Tags</string>
 			<key>scope</key>
@@ -336,7 +336,6 @@
 				<string>#fff</string>
 			</dict>
 		</dict>
-		-->
 
 		<dict>
 			<key>name</key>
