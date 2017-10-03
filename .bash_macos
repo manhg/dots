@@ -125,3 +125,5 @@ export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+alias komodo='open -a "Komodo Edit 11"'
