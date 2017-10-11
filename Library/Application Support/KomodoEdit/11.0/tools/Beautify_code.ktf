@@ -1,0 +1,121 @@
+// komodo tool: Beautify code
+// ==========================
+// async: False
+// language: JavaScript
+// rank: 100
+// trigger: trigger_postopen
+// trigger_enabled: False
+// type: macro
+// version: 1.1.5
+// ==========================
+/*
+Install dependencies:
+
+  pip install --upgrade autopep8
+  pip3 install --upgrade autopep8
+  brew install astyle
+  brew install tidy-html5
+  brew install homebrew/php/php-cs-fixer (v2)
+  gem install ruby-beautify
+  pip3 install sqlparse
+
+*/
+komodo.assertMacroVersion(3);
+if (komodo.view.scintilla) {
+    komodo.view.scintilla.focus();
+} // bug 67103
+var koDoc = (komodo.koDoc === undefined ? komodo.document : komodo.koDoc);
+var formatter;
+var language = koDoc.language;
+var cannot_tidy_selection = false;
+
+switch (language) {
+case 'C#':
+    cannot_tidy_selection = true;
+    formatter = 'astyle --style=ansi --mode=cs --convert-tabs --indent=spaces=4 %F > /dev/null 2>&1; cat %F';
+    break;
+case 'C++':
+    cannot_tidy_selection = true;
+    formatter = 'astyle --style=linux --mode=c --convert-tabs --indent=spaces=4 %F > /dev/null 2>&1; cat %F';
+    break;
+case 'CSS':
+    formatter = 'csstidy - --preserve_css=true --lowercase_s=true --case_properties=true --sort_properties=true --remove_bslash=false --silent=true --template=medium';
+    break;
+case 'HTML5':
+case 'HTML':
+    cannot_tidy_selection = true;
+    formatter = 'tidy -q -i -b -c -w 120 --show-warnings no --show-errors 0 --tidy-mark no --css-prefix block --drop-proprietary-attributes yes --anchor-as-name no --enclose-text yes';
+    break;
+case 'Java':
+    cannot_tidy_selection = true;
+    formatter = 'astyle --style=java --mode=java --convert-tabs --indent=spaces=4 %F > /dev/null 2>&1; cat %F';
+    break;
+case 'Perl':
+    formatter = 'perltidy';
+    break;
+case 'PHP':
+    cannot_tidy_selection = true;
+    formatter = 'php-cs-fixer fix %F --rules=@Symfony';
+    break;
+case 'Python':
+case 'Python3':
+    cannot_tidy_selection = true;
+    formatter = 'autopep8 --in-place --aggressive %F';
+    break;
+case 'Ruby':
+    formatter = 'rbeautify.rb -';
+    break;
+case 'XSLT':
+    cannot_tidy_selection = true;
+    formatter = 'tidy -q -xml -i -w 120 --show-warnings no --show-errors 0 --tidy-mark no';
+    break;
+case 'XML':
+    cannot_tidy_selection = true;
+    formatter = 'xmllint --format --recover -';
+    break;
+case 'SQL':
+    // format selection
+    formatter = 'python3 -c "import sqlparse, sys; print(sqlparse.format(sys.stdin, reindent=True))"';
+    break;
+default:
+    alert("Uknkown language " + language);
+    return null;
+}
+
+// Save cursor Position
+var currentPos = komodo.editor.currentPos;
+try {
+    // Save the file, Check Changes with "File -> Show Unsaved Changes"
+    komodo.doCommand('cmd_save');
+    // Group operations in a single undo
+    // Select Buffer, pipe it into formatter.
+    var text_not_selected = cannot_tidy_selection || komodo.editor.selText == "";
+    if (text_not_selected) {
+        komodo.doCommand('cmd_selectAll');
+        ko.run.runEncodedCommand(window, formatter + " {'insertOutput': True}");
+    } else {
+        ko.run.runEncodedCommand(window, formatter + " {'insertOutput': True, 'operateOnSelection': True}");
+    }
+    komodo.doCommand('cmd_cleanLineEndings');
+    if (text_not_selected) {
+        // Reload file
+        var view = ko.views.manager.currentView;
+        if (view) {
+            // Ref: http://docs.activestate.com/komodo/9.0/macroapi.html#macroapi_file
+            var currentURI = koDoc.file.URI,
+                currentLine = view.scimoz.lineFromPosition(komodo.editor.currentPos);
+            // now close and re-open
+            view.closeUnconditionally(); // or close()
+            ko.open.URI(currentURI + "#" + currentLine);
+        }
+    }
+    StatusBar_AddMessage("Formatted");
+}
+catch (e) {
+    alert(e);
+}
+finally {
+    // End Undo Action to Avoid Edit Buffer Corruption
+    // komodo.editor.endUndoAction();
+    return true;
+}

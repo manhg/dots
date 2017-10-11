@@ -1,0 +1,18 @@
+{
+  "insertOutput": 0, 
+  "parseRegex": "^(?P<file>.+?):(?P<line>\\d+):(?P<content>.*)$", 
+  "name": "git grep", 
+  "keyboard_shortcut": "Meta+/", 
+  "operateOnSelection": 0, 
+  "value": [
+    "git grep --line-number %(w:orask:Search Term) -- \"%(ask:File Pattern:*)\""
+  ], 
+  "cwd": "%i", 
+  "version": "1.1.5", 
+  "env": "", 
+  "doNotOpenOutputWindow": 0, 
+  "showParsedOutputList": 1, 
+  "type": "command", 
+  "parseOutput": 1, 
+  "runIn": "command-output-window"
+}}

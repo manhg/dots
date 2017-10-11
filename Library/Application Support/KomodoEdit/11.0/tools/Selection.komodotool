@@ -1,0 +1,15 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "Selection", 
+  "language": "JavaScript", 
+  "trigger_enabled": false, 
+  "value": [
+    " var view = ko.views.manager.currentView;", 
+    " alert(view.selection)"
+  ], 
+  "version": "1.1.5", 
+  "rank": 100, 
+  "async": false, 
+  "type": "macro", 
+  "trigger": "trigger_postopen"
+}}

@@ -1,0 +1,32 @@
+{
+  "keyboard_shortcut": "Meta+N", 
+  "name": "NewFile", 
+  "language": "JavaScript", 
+  "trigger_enabled": false, 
+  "value": [
+    "if (ko.places.viewMgr.getSelectedURIs()) {", 
+    "    ko.places.viewMgr.addNewFile()", 
+    "} else {", 
+    "    var koView =  ko.views.manager.currentView;", 
+    "    if (koView) {", 
+    "        var folder = koView.koDoc.file.dirName;", 
+    "        // Reference: https://github.com/Komodo/KomodoEdit/blob/trunk/src/views/koIFileEx.idl", 
+    "        var file = Components.classes[\"@activestate.com/koFileEx;1\"].createInstance(Components.interfaces.koIFileEx);", 
+    "        var name = ko.dialogs.prompt(\"New file at: \" + folder);", 
+    "        if (!name) {", 
+    "            return;", 
+    "        }", 
+    "        var path = folder + '/' + name;", 
+    "        file.URI = ko.uriparse.pathToURI(path);", 
+    "        file.open(\"w\");", 
+    "        file.close();", 
+    "        ko.open.URI(path);", 
+    "    }", 
+    "}"
+  ], 
+  "version": "1.1.5", 
+  "rank": 100, 
+  "async": false, 
+  "type": "macro", 
+  "trigger": "trigger_postopen"
+}}
