@@ -1,0 +1,7 @@
+[core]
+	excludesfile = ~/.gitignore_global
+[user]
+	email = manhg@users.noreply.github.com
+	name = Giang Manh
+[push]
+	default = current
