@@ -26,10 +26,9 @@ alias pdb2="python2 -m pdb "
 export JAVA_OPTS="-Xms32m -Xmx256m"
 export JVM_OPTS=$JAVA_OPTS
 
-if [ ! -f ~/.z.sh ]; then
-    wget -O ~/.z.sh  https://raw.githubusercontent.com/rupa/z/master/z.sh
+if [-f ~/.z.sh ]; then
+    source ~/.z.sh
 fi
-source ~/.z.sh
 
 case "$OSTYPE" in
   darwin*)  source ~/.bash_macos ;;
