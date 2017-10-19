@@ -10,7 +10,7 @@ chmod 750 dry-linux-amd64
 mv dry-linux-amd64 /usr/sbin
 
 wget -O ~/.bash_profile https://raw.githubusercontent.com/manhg/dots/master/.bash_profile
-wget -O ~/.bash_linux https://github.com/manhg/dots/blob/master/.bash_linux
+wget -O ~/.bash_linux https://raw.githubusercontent.com/manhg/dots/master/.bash_linux
 wget -O ~/.vimrc https://raw.githubusercontent.com/manhg/dots/master/.vimrc
 wget -O ~/.pdbrc https://raw.githubusercontent.com/manhg/dots/master/.pdbrc
 wget -O ~/.psqlrc https://raw.githubusercontent.com/manhg/dots/master/.psqlrc
