@@ -1,6 +1,7 @@
 // komodo tool: Beautify code
 // ==========================
 // async: False
+// is_clean: true
 // language: JavaScript
 // rank: 100
 // trigger: trigger_postopen
@@ -25,7 +26,6 @@ if (komodo.view.scintilla) {
     komodo.view.scintilla.focus();
 } // bug 67103
 var koDoc = (komodo.koDoc === undefined ? komodo.document : komodo.koDoc);
-var formatter;
 var language = koDoc.language;
 var cannot_tidy_selection = false;
 
@@ -109,7 +109,6 @@ try {
             ko.open.URI(currentURI + "#" + currentLine);
         }
     }
-    StatusBar_AddMessage("Formatted");
 }
 catch (e) {
     alert(e);
