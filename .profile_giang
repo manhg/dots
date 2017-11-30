@@ -56,7 +56,3 @@ function gfp() {
     echo "Force push: $current_branch"
     git push origin +$current_branch
 }
-
-if [[ -n "$TMUX" ]]; then
-    printf "$RED $(hostname) $NC";
-fi
