@@ -1,6 +1,4 @@
-PS_COLOR="\[$(tput setaf 2)\]"
-RESET="\[$(tput sgr0)\]"
-export PS1="${PS_COLOR}\u \w \$ ${RESET}"
+export PS1="\u \w \$ "
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 alias dsclean='find . -type f -name .DS_Store -print0 | xargs -0 rm'

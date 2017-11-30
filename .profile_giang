@@ -4,7 +4,7 @@ export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="[%F %T] "
 export HISTCONTROL=ignoredups;
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE=""
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export LC_ALL=en_US.UTF-8
