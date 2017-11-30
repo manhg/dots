@@ -1,18 +1,14 @@
 export HH_CONFIG=hicolor         # get more colors
-export HISTCONTROL=ignorespace   # leading space hides commands from history
-export HISTFILESIZE=10000        # increase history file size (default is 500)
-export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+export HISTFILESIZE=100000
+export HISTSIZE=100000
+export HISTTIMEFORMAT="[%F %T] "
+export HISTCONTROL=ignoredups;
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-export HISTFILESIZE=100000
-export HISTSIZE=10000
-export HISTTIMEFORMAT="[%F %T] "
-export HISTCONTROL=ignoredups;
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 export MANPAGER="less -X" # Don't clear the screen after quitting a manual page
 
