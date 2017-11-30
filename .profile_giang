@@ -32,6 +32,9 @@ export LBLUE="\033[1;34"
 export NC="\033[0m"
 export GIT_C="printf \"$RED\"; git rev-parse --abbrev-ref HEAD; printf \"$NC\n\"; "
 
+alias l='ls --color=auto --classify --group-directories-first --human-readable --quoting-style=literal'
+alias l.='ls -d .* --color=auto' # show hidden only
+alias ll='l -la' # show all
 alias komodo='open -a "Komodo Edit 11"'
 alias rand='dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64 | cut -c -16'
 alias du1='du -h --max-depth=1'

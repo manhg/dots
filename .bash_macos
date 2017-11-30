@@ -35,3 +35,7 @@ function pypi() {
     python3 setup.py register -r pypi
     python3 setup.py sdist upload -r pypi
 }
+
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
+
+source .z.sh
