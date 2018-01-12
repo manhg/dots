@@ -2,7 +2,8 @@ Version = 15
 
 Booleans = {'caretLineVisible': False, 'preferFixed': True, 'useSelFore': False}
 
-InterfaceStyles = {'css': {'code': '/* Enter your custom LESS CSS code \n * to further customize the interface */\n\n@import url("chrome://komodo/skin/global/colors.less");\n@import url("resource://profile/colors.less");\n\n'}}
+InterfaceStyles = {'css': {'code': '/* Enter your custom LESS CSS code \n * to further customize the interface */\n\n@import url("chrome://komodo/skin/global/colors.less");\n@import url("resource://profile/colors.less");\n\n'},
+ 'window': {'face': 'Lucida Grande', 'size': '14'}}
 
 CommonStyles = {'attribute name': {'fore': 7872391},
  'attribute value': {'fore': 10379298},
@@ -14,11 +15,11 @@ CommonStyles = {'attribute name': {'fore': 7872391},
  'default_fixed': {'back': 16777215,
                    'bold': 0,
                    'eolfilled': 0,
-                   'face': 'Monaco',
+                   'face': 'Consolas',
                    'fore': 0,
                    'hotspot': 0,
                    'italic': 0,
-                   'size': 11,
+                   'size': 12,
                    'useFixed': 1},
  'default_proportional': {'back': 16777215,
                           'bold': 0,
@@ -257,7 +258,7 @@ MiscLanguageSettings = {'CSS': {'globalSubLanguageBackgroundEnabled': True},
 Colors = {'bookmarkColor': 14342664,
  'callingLineColor': 16764159,
  'caretFore': 0,
- 'caretLineBack': 16119285,
+ 'caretLineBack': 15269375,
  'changeMarginDeleted': 15161172,
  'changeMarginInserted': 10935459,
  'changeMarginReplaced': 6476776,

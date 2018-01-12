@@ -9,14 +9,14 @@ binding cmd_bookmarkToggle Meta+B
 binding cmd_browserPreview Ctrl+K Ctrl+V
 binding cmd_reloadBrowserPreview Ctrl+K Ctrl+R
 binding cmd_bufferClose Meta+W
-binding cmd_bufferNext Meta+Page_Down
 binding cmd_bufferNext Meta+Shift+}
-binding cmd_bufferNextLeastRecent Meta+Shift+F6
+binding cmd_bufferNext Meta+Page_Down
 binding cmd_bufferNextLeastRecent Ctrl+Shift+Tab
-binding cmd_bufferNextMostRecent Meta+F6
+binding cmd_bufferNextLeastRecent Meta+Shift+F6
 binding cmd_bufferNextMostRecent Ctrl+Tab
-binding cmd_bufferPrevious Meta+Page_Up
+binding cmd_bufferNextMostRecent Meta+F6
 binding cmd_bufferPrevious Meta+Shift+{
+binding cmd_bufferPrevious Meta+Page_Up
 binding cmd_buffer1 Meta+1
 binding cmd_buffer2 Meta+2
 binding cmd_buffer4 Meta+4
@@ -24,8 +24,8 @@ binding cmd_buffer5 Meta+5
 binding cmd_buffer6 Meta+6
 binding cmd_buffer7 Meta+7
 binding cmd_buffer8 Meta+8
-binding cmd_closeAll Meta+Shift+W
 binding cmd_closeAll Meta+Ctrl+W
+binding cmd_closeAll Meta+Shift+W
 binding cmd_closeProject Ctrl+W
 binding cmd_goToDefinition F3
 binding cmd_completeWord Escape
@@ -35,19 +35,19 @@ binding cmd_convertUpperCase Meta+U
 binding cmd_copy Meta+C
 binding cmd_cut Meta+X
 binding cmd_delete Delete
-binding cmd_deleteWordLeft Alt+Backspace
 binding cmd_deleteWordLeft Meta+Backspace
+binding cmd_deleteWordLeft Alt+Backspace
 binding cmd_deleteWordRight Meta+Delete
-binding cmd_documentEnd Meta+End
 binding cmd_documentEnd Meta+Down
-binding cmd_documentHome Meta+Home
+binding cmd_documentEnd Meta+End
 binding cmd_documentHome Meta+Up
+binding cmd_documentHome Meta+Home
 binding cmd_editPrefs Meta+,
 binding cmd_editProperties Alt+Return
 binding cmd_editReflow Meta+Shift+Q
 binding cmd_selectAll Meta+A
-binding cmd_end End
 binding cmd_end Meta+Right
+binding cmd_end End
 binding cmd_endOfWord Alt+Right
 binding cmd_executeLastMacro Ctrl+K _
 binding cmd_expandAbbrev Meta+Y
@@ -57,8 +57,8 @@ binding cmd_focusEditor Ctrl+Shift+E
 binding cmd_focusSource Ctrl+K Ctrl+S
 binding cmd_fontZoomReset Meta+0
 binding cmd_helpLanguageAlternate F1
-binding cmd_home Home
 binding cmd_home Meta+Left
+binding cmd_home Home
 binding cmd_join Ctrl+J
 binding cmd_jumpToMatchingBrace Meta+Shift+M
 binding cmd_left Left
@@ -76,8 +76,8 @@ binding cmd_pasteAndSelect Meta+Shift+V
 binding cmd_quit Meta+Q
 binding cmd_redo Meta+Shift+Z
 binding cmd_repeatNextCommandBy Ctrl+K Ctrl+U
-binding cmd_replace Meta+R
 binding cmd_replace Meta+=
+binding cmd_replace Meta+R
 binding cmd_revert Meta+Ctrl+U
 binding cmd_right Right
 binding cmd_save Meta+S
@@ -87,10 +87,10 @@ binding cmd_selectCharNext Shift+Right
 binding cmd_selectCharPrevious Shift+Left
 binding cmd_selectDocumentEnd Meta+Shift+Down
 binding cmd_selectDocumentHome Meta+Shift+Up
-binding cmd_selectEnd Meta+Shift+Right
 binding cmd_selectEnd Shift+End
-binding cmd_selectHome Meta+Shift+Left
+binding cmd_selectEnd Meta+Shift+Right
 binding cmd_selectHome Shift+Home
+binding cmd_selectHome Meta+Shift+Left
 binding cmd_selectLineNext Shift+Down
 binding cmd_selectLinePrevious Shift+Up
 binding cmd_selectPageDown Shift+Page_Down
@@ -110,8 +110,8 @@ binding cmd_startMacroMode Ctrl+K (
 binding cmd_stopMacroMode Ctrl+K )
 binding cmd_toggleInteractiveShell Meta+Escape
 binding cmd_toggleOvertype Insert
-binding cmd_triggerPrecedingCompletion F4
 binding cmd_triggerPrecedingCompletion Alt+Escape
+binding cmd_triggerPrecedingCompletion F4
 binding cmd_undo Meta+Z
 binding cmd_viewBottomPane F12
 binding cmd_viewEOL Meta+Shift+&
@@ -129,8 +129,8 @@ binding cmd_htmlTagRelocator Ctrl+Shift+Z
 binding cmd_lineDelete Meta+L
 binding cmd_lineCut Meta+Shift+X
 binding cmd_deleteBlankLines Meta+Shift+L
-binding cmd_gotoLine Ctrl+G
 binding cmd_gotoLine Meta+G
+binding cmd_gotoLine Ctrl+G
 binding cmd_launchColorPicker Ctrl+C
 binding cmd_showUnsavedChanges Meta+D
 binding cmd_splitLine Meta+\
@@ -143,10 +143,10 @@ binding cmd_helpLanguage Meta+F1
 binding cmd_makeSnippetFromSelection Meta+Shift+Y
 binding cmd_viewRightPane Alt+F12
 binding cmd_emmet_expand_abbreviation Shift+Return
-binding cmd_comment Meta+/
 binding cmd_comment Meta+3
-binding cmd_uncomment Meta+Shift+#
+binding cmd_comment Meta+/
 binding cmd_uncomment Meta+Ctrl+/
+binding cmd_uncomment Meta+Shift+#
 binding cmd_morekomodo_copyFullPath Meta+Shift+F10
 binding cmd_foldToggle Meta+9
 binding cmd_foldExpandAll Meta+Shift+(
@@ -181,8 +181,8 @@ binding cmd_replaceInCurrProject Meta+Shift+R
 binding cmd_scope-bookmarks Meta+Shift+B
 binding cmd_findInFiles Meta+Shift+F
 binding cmd_replaceInFiles Ctrl+R
-binding cmd_newWindow Meta+Shift+O
 binding cmd_newWindow Meta+F3
+binding cmd_newWindow Meta+Shift+O
 binding cmd_editPrefsCurrent Meta+Shift+<
 binding cmd_refreshStatus F5
 binding cmd_lineTransposeDown Meta+Shift+Down
