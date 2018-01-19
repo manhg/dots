@@ -26,3 +26,4 @@ node_modules
 .vscode
 .idea
 .fab_tasks~
+*.code-workspace
