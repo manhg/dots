@@ -31,7 +31,7 @@
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 11,
+	"font_size": 12,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -43,6 +43,7 @@
 	"show_encoding": true,
 	"soda_classic_tabs": false,
 	"soda_folder_icons": false,
+	"theme": "Adaptive.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }

@@ -27,7 +27,7 @@
     "    } else if (ext == '.rb') {", 
     "        ko.run.runEncodedCommand(window, '%(ruby)' + defaults);", 
     "    } else if (ext == '.py') {", 
-    "        ko.run.runEncodedCommand(window, '%(python3)' + defaults);", 
+    "        ko.run.runEncodedCommand(window, 'python3 ' + defaults);", 
     "    } else if (ext == '.sass') {", 
     "        var output =  barename + '.css';", 
     "        ko.run.runEncodedCommand(window, 'sass --no-cache ' + input + ' ' + output);", 
@@ -45,4 +45,4 @@
   "async": 1, 
   "type": "macro", 
   "trigger": "trigger_postopen"
-}}
+}
