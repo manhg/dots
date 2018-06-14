@@ -825,40 +825,116 @@
 			</dict>
 		</dict>
 <!-- /Coda -->
-        
+
+    <dict>
+			<key>name</key>
+			<string>• JS code</string>
+			<key>scope</key>
+			<string>source.js</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFF7FE</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>• PHP code</string>
+			<key>scope</key>
+			<string>source.php</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFFFF5</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>• CSS code</string>
+			<key>scope</key>
+			<string>source.css</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F6FFF2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>• HTML code</string>
+			<key>scope</key>
+			<string>source.html</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F9FFFE</string>
+			</dict>
+		</dict>
+		
         <dict>
-<key>name</key>
-    <string>• JS code</string>
-    <key>scope</key>
-    <string>source.js</string>
-    <key>settings</key>
-    <dict>
-        <key>background</key>
-        <string>#FDF7FF</string>
-    </dict>
-</dict>
-<dict>
-    <key>name</key>
-    <string>• PHP code</string>
-    <key>scope</key>
-    <string>source.php</string>
-    <key>settings</key>
-    <dict>
-        <key>background</key>
-        <string>#FCFCED</string>
-    </dict>
-</dict>
-<dict>
-    <key>name</key>
-    <string>• HTML code</string>
-    <key>scope</key>
-    <string>source.html</string>
-    <key>settings</key>
-    <dict>
-        <key>background</key>
-        <string>#F9FFFE</string>
-    </dict>
-</dict>
+			<key>name</key>
+			<string>Hilight definition</string>
+			<key>scope</key>
+			<string>meta.function.coffee,
+entity.name.function.coffee,
+meta.inline.function.coffee,
+meta.class.python</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFFDE0</string>
+				<key>fontStyle</key>
+				<string> bold</string>
+				<key>foreground</key>
+				<string>#000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string></string>
+			<key>scope</key>
+			<string>string.quoted.double.coffee</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#269E9E</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string></string>
+			<key>scope</key>
+			<string>string.quoted.double.coffee</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9E5F00</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string></string>
+			<key>scope</key>
+			<string>string.single-line.python</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06A399</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string></string>
+			<key>scope</key>
+			<string>entity.other.inherited-class</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string> italic</string>
+				<key>foreground</key>
+				<string>#4D4D4D</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>ADD7FDE7-C6BE-454B-A71A-7951ED54FB04</string>

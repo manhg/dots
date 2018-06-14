@@ -10,6 +10,7 @@
     { "keys": ["keypad_enter"], "command": "find_next", "context":
         [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
     },
+    { "keys": ["shift+super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	// Wrap selection in tag
     {
         "keys"      :   ["shift+super+t"],
@@ -17,5 +18,6 @@
         "args": {
             "contents": "<${1:p}>${0:$SELECTION}</${1}>"
         }
-    }
+    },
+    { "keys": ["f12"], "command": "toggle_side_bar" },
 ]
