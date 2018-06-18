@@ -25,7 +25,7 @@
 	"create_window_at_startup": true,
 	"default_line_ending": "unix",
 	"drag_text": false,
-	"fallback_encoding": "ShiftJIS",
+	"fallback_encoding": "Shift-JIS",
 	"file_exclude_patterns":
 	[
 		".gz",
@@ -70,7 +70,7 @@
 		"bower_components"
 	],
 	"font_face": "Menlo",
-	"font_size": 13,
+	"font_size": 12,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
